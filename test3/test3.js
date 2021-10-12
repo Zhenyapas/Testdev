@@ -8,7 +8,7 @@ let arr = [
 let arr2 = [
   ['Hello','world'],
   ['Brad','came','to','dinner','with','us','oh','no','yes'],
-  ['He','loves','tacos']
+  ['He','loves','tacos','and','buritos','mohitos']
 ];
 
 function textEditor(arr,condition) {
@@ -16,7 +16,7 @@ function textEditor(arr,condition) {
 
   let a='*';
   for (let i=0; i<18; i++){a=a+'*';}
-
+ function repeatForEach (arr, condition) {
   arr.forEach((elem,i,array) => {
     
     if( elem.join(' ').length + elem.length -1 > 16 ){
@@ -24,7 +24,7 @@ function textEditor(arr,condition) {
       let copyArrSpace=[...elem];
       let del1;
       let delContainer=[];
-      elem.forEach((e,i) => {
+      elem.forEach(() => {
         copyArrSpace.push(' ');
       })
 
@@ -50,9 +50,23 @@ function textEditor(arr,condition) {
       k++;
       }
     
-    } 
+    }
+     
 
   });
+ }
+ let countRepeat=0;
+ arr.forEach((elem,i,array) => {
+  if( elem.join(' ').length + elem.length -1 > 16 ){
+  countRepeat=countRepeat+1;
+  }
+ });
+
+ for(let m=0; m<countRepeat; m++){
+   repeatForEach(arr,condition);
+ }
+ 
+ 
 
   function space(length) {
     let n=' ';
@@ -86,3 +100,4 @@ function textEditor(arr,condition) {
 
 console.log(textEditor(arr,condition));
 alert(textEditor(arr2,condition));
+
