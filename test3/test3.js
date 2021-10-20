@@ -1,4 +1,5 @@
 let condition=['LEFT','RIGHT','LEFT'];
+let condition2=['LEFT'];
 
 let arr = [
   ['Hello','world'],
@@ -10,12 +11,16 @@ let arr2 = [
   ['Brad','came','to','dinner','with','us','oh','no','yes'],
   ['He','loves','tacos','and','buritos','mohitos']
 ];
+let arr3 = [['1','2','3','4','5','6','7','8','9','1','2','3','4','5'],
+];
+let arr4 = [['1','2','3','4','5'],
+];
 
 function textEditor(arr,condition) {
 
 
   let a='*';
-  for (let i=0; i<18; i++){a=a+'*';}
+  for (let i=0; i<17; i++){a=a+'*';}
  function repeatForEach (arr, condition) {
   arr.forEach((elem,i,array) => {
     
@@ -82,9 +87,9 @@ function textEditor(arr,condition) {
  
   let newArr = newArray.map((elem,i) => {
     if(condition[i] === 'LEFT') {
-      elem ='*'+elem+space(16  - elem.length)+'*';
+      elem ='*'+elem+space(15  - elem.length)+'*';
     } else {
-      elem ='*'+ space(16  - elem.length) + elem +'*';
+      elem ='*'+ space(15  - elem.length) + elem +'*';
     }
 
     return elem
@@ -98,6 +103,6 @@ function textEditor(arr,condition) {
 
 } 
 
-console.log(textEditor(arr,condition));
-alert(textEditor(arr2,condition));
+
+console.log(textEditor(arr3,condition2));
 
